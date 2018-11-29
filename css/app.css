@@ -10,20 +10,17 @@ html {
 
 html,
 body {
-    width: 100%;
-    height: 100%;
     margin: 0;
     padding: 0;
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: url('../images/old_wall.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
 
 .container {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -84,18 +81,20 @@ h1 {
 /*
  * Styles for the Score Panel
  */
-
 .score-panel {
-    text-align: left;
-    width: 345px;
-    margin-bottom: 10px;
+    color: #535d63;
 }
 
 .score-panel .stars {
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 0;
     display: inline-block;
-    margin: 0 5px 0 0;
+}
+
+.score-panel .stars .fa,
+.score-panel .restart .fa {
+    color: #677179;
 }
 
 .score-panel .stars li {
@@ -106,4 +105,6 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+    margin-top: -0.2em;
+    font-size: 1.5em;
 }
