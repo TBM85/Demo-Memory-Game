@@ -1,3 +1,109 @@
+/* Apply styles starting from Small devices and up to Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 576px) {
+    .score-panel {
+        text-align: left;
+        width: 20em;
+    }
+    .score-panel .stars {
+        margin-left: -3.5em;
+    }
+    .score-panel .moves,
+    .score-panel .times {
+        padding-left: 4em;
+    }
+    .score-panel .restart {
+        margin-right: -2em;
+    }
+    .deck {
+        width: 28em;
+        height: 28em;
+        padding: 0.5em;
+    }
+    .deck .card {
+        height: 100px;
+        width: 100px;
+    }
+    .deck .card.show,
+    .deck .card.match {
+        font-size: 3em;
+    }
+    footer {
+        font-size: 0.8em;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (min-width: 480px) and (max-width: 575px) {
+    .container {
+        margin: 0 10vw 0 10vw;
+    }
+    h1 {
+        font-size: calc(1em + 3vw);
+    }
+    .score-panel .stars {
+        margin-left: -5.5em;
+    }
+    .score-panel .moves,
+    .score-panel .times {
+        padding-left: 10vw;
+    }
+    .score-panel .restart {
+        margin-right: -2.8em;
+    }
+    .deck {
+        width: 100%;
+        min-height: 100%;
+        padding: 2vw;
+    }
+    .deck .card {
+        height: 18vw;
+        width: 18vw;
+        margin-bottom: 2vw;
+    }
+    .deck .card.show,
+    .deck .card.match {
+        font-size: calc(1.8em + 3vw);
+    }
+    footer {
+        font-size: calc(0.2em + 2vw);
+    }
+}
+
+@media (max-width: 479px) {
+    .container {
+        margin: 0 5vw 0 5vw;
+    }
+    h1 {
+        font-size: calc(0.8em + 4vw);
+    }
+    .score-panel {
+        font-size: calc(0.2em + 3vw);
+    }
+    .score-panel .stars,
+    .score-panel .moves,
+    .score-panel .times,
+    .score-panel .restart {
+        padding-left: 7vw;
+    }
+    .deck {
+        width: 100%;
+        min-height: 100%;
+        padding: 2vw;
+    }
+    .deck .card {
+        height: 20vw;
+        width: 20vw;
+        margin-bottom: 2vw;
+    }
+    .deck .card.show,
+    .deck .card.match {
+        font-size: calc(1.2em + 5vw);
+    }
+    footer {
+        font-size: calc(0.1em + 2.5vw);
+    }
+}
+
 html {
     box-sizing: border-box;
 }
@@ -25,57 +131,101 @@ body {
     flex-direction: column;
 }
 
-h1 {
+h1, h2 {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+    text-align: center;
+}
+
+h1 {
+    color: #535d63;
+    border: 1.5px dashed #535d63;
+    border-radius: 0.2em;
+    padding: 0.1em 0.5em 0.2em;
+    background-color: #f2f2f2;
+}
+
+h2 {
+    color: #535d63;
 }
 
 /*
  * Styles for the deck of cards
  */
-
 .deck {
-    width: 660px;
-    min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
-    padding: 32px;
-    border-radius: 10px;
-    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin: 0 0 3em;
+    margin-top: 0;
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
-    background: #2e3d49;
+    background: #677179;
     font-size: 0;
-    color: #ffffff;
-    border-radius: 8px;
+    border: 1px solid #535d63;
+    border-radius: 5px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    box-shadow: 5px 4px 8px 0 rgba(83, 93, 99, 1);
 }
 
 .deck .card.open {
     transform: rotateY(0);
-    background: #02b3e4;
+    background: #f9fafb;
     cursor: default;
 }
 
-.deck .card.show {
-    font-size: 33px;
+.deck .card.show .fa {
+    color: #274d6b;
 }
 
 .deck .card.match {
     cursor: default;
-    background: #02ccba;
-    font-size: 33px;
+    background: #274d6b;
+}
+
+.deck .card.match .fa {
+    color: #f9fafb;
+}
+
+.deck .card.disable {
+    pointer-events: none;
+}
+
+/* CSS Animation */
+.deck .card.shake {
+      animation: shake 0.8s;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(1px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-2px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(2px, 0, 0);
+    }
+}
+
+.deck .card.fade-out {
+    animation: fadeOut 3s;
+    opacity: 0.3;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.3;
+    }
 }
 
 /*
@@ -107,4 +257,55 @@ h1 {
     cursor: pointer;
     margin-top: -0.2em;
     font-size: 1.5em;
+}
+
+/*
+ * Styles for the Final Message
+ */
+.final-message .message {
+    position: absolute;
+    text-align: center;
+    top: 20%;
+}
+
+.final-message .score {
+    list-style: none;
+    display: inline-flex;
+}
+
+.final-message button {
+    background-color: #274d6b;
+    font-size: 1.5em;
+    border-radius: 0.25em;
+    border-style: none;
+    color: #f9fafb;
+    padding: 0.5em;
+    margin-top: 2em;
+    box-shadow: 4px 3px 10px 0 rgba(83, 93, 99, 1);
+}
+
+.final-message button:active,
+.final-message button:focus {
+    border-style: none;
+    outline: none;
+    box-shadow: 1px 1px 8px 0 rgba(83, 93, 99, 1);
+}
+
+.final-message .results {
+    margin: 1.5em 0 0 0;
+    color: #535d63;
+}
+
+.final-message .background-message {
+    opacity: 0;
+}
+
+/*
+ * Styles for the Footer
+ */
+footer {
+    color: #677179;
+    margin-top: -2em;
+    text-align: center;
+    margin-bottom: 0;
 }
