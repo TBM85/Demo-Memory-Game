@@ -20,3 +20,6 @@ Match the eight pairs of hidden cards, with the highest rating in stars and in t
 * The game ends when all the cards have been matched or when the 30 moves are exceeded
 * The player wins when all the cards have been matched
 * The player loses when he does not finish matching the cards before the 30 moves
+
+## License
+Copyright (c) 2018 Tania Ballester Marsal. This project is using [MIT License](LICENSE.md)
