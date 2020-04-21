@@ -160,9 +160,9 @@ h2 {
 }
 
 .deck .card {
-    background: #677179;
+    background: #2dacb9;
     font-size: 0;
-    border: 1px solid #535d63;
+    border: 1px solid #1f828c;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
@@ -178,12 +178,12 @@ h2 {
 }
 
 .deck .card.show .fa {
-    color: #274d6b;
+    color: #1f828c;
 }
 
 .deck .card.match {
     cursor: default;
-    background: #274d6b;
+    background: #1f828c;
 }
 
 .deck .card.match .fa {
@@ -271,10 +271,11 @@ h2 {
 .final-message .score {
     list-style: none;
     display: inline-flex;
+    color: #1f828c;
 }
 
 .final-message button {
-    background-color: #274d6b;
+    background-color: #1f828c;
     font-size: 1.5em;
     border-radius: 0.25em;
     border-style: none;
