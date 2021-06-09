@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Coda&display=swap');
+
 /* Apply styles starting from Small devices and up to Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 576px) {
     .score-panel {
