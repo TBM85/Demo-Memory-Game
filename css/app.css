@@ -12,6 +12,7 @@
     .score-panel .moves,
     .score-panel .times {
         padding-left: 4em;
+        font-size: 1.2em;
     }
     .score-panel .restart {
         margin-right: -2em;
@@ -99,7 +100,7 @@
         font-size: calc(1.2em + 5vw);
     }
     footer {
-        font-size: calc(0.1em + 2.5vw);
+        font-size: calc(0.1em + 3vw);
     }
 }
 
