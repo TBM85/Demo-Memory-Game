@@ -78,9 +78,6 @@
     h1 {
         font-size: calc(0.8em + 4vw);
     }
-    .score-panel {
-        font-size: calc(0.2em + 3vw);
-    }
     .score-panel .stars,
     .score-panel .moves,
     .score-panel .times,
@@ -235,6 +232,8 @@ h2 {
  */
 .score-panel {
     color: #535d63;
+    margin-top: 1em;
+    margin-bottom: 0.4em;
 }
 
 .score-panel .stars {
@@ -257,8 +256,8 @@ h2 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
-    margin-top: -0.2em;
-    font-size: 1.5em;
+    margin-top: -0.3em;
+    font-size: 2.4em;
 }
 
 /*
